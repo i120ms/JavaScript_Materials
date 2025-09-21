@@ -9,11 +9,7 @@ All notes from me and some tasks from ♡ <b>MAŁGORZATA T</b> (JS final boss) �
 
 <br><br>
 
-&nbsp; ╱|、<br> <font face = "Verdana">
-        <p align = "right">
-            i120ms <sub>2025</sub>
-        </p>
-</font>
+&nbsp; ╱|、<br> 
 (˚ˎ 。7  <br>
 |、˜〵       
 じしˍ,)ノ 
