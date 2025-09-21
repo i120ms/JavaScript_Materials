@@ -13,3 +13,5 @@ All notes from me and some tasks from ♡ <b>MAŁGORZATA T</b> (JS final boss) �
 (˚ˎ 。7  <br>
 |、˜〵       
 じしˍ,)ノ 
+
+<h3>i120ms</h3>
