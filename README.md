@@ -15,6 +15,10 @@ All notes from me and some tasks from ♡ <b>MAŁGORZATA T</b> (JS final boss) �
 じしˍ,)ノ 
 
 <font face = "Verdana">
+  &nbsp; ╱|、<br>
+(˚ˎ 。7  <br>
+|、˜〵       
+じしˍ,)ノ
         <p align = "right">
             i120ms <sub>2025</sub>
         </p>
