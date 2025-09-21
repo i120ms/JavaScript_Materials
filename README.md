@@ -6,3 +6,10 @@ All notes from me and some tasks from ♡ <b>MAŁGORZATA TOKAREK</b> (JS final b
 ### Foldery
 1. [Date](./date) <br>
 2. [Tablice / Arrays](./tablice)
+
+<br><br>
+
+                            ╱|、
+                          (˚ˎ 。7  
+                           |、˜〵          
+                          じしˍ,)ノ
