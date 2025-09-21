@@ -14,4 +14,8 @@ All notes from me and some tasks from ♡ <b>MAŁGORZATA T</b> (JS final boss) �
 |、˜〵       
 じしˍ,)ノ 
 
-<h3>i120ms</h3>
+<font face = "Verdana" size = 0,8%>
+        <p align = "right">
+            i120ms
+        </p>
+</font>
