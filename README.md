@@ -9,7 +9,7 @@ All notes from me and some tasks from ♡ <b>MAŁGORZATA TOKAREK</b> (JS final b
 
 <br><br>
 
- ╱|、
-(˚ˎ 。7  
-|、˜〵          
+ ╱|、<br>
+(˚ˎ 。7  <br>
+|、˜〵       <br>   
 じしˍ,)ノ
