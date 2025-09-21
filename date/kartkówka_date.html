@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Daty - 3 sposoby bez getFullYear</title>
+</head>
+<body>
+  <h2>Wypisywanie daty na 3 sposoby (cała data)</h2>
+
+  <!-- Wybór daty z okienka -->
+  <label>Wybierz datę: <input type="date" id="dataWybor"></label>
+  <br><br>
+
+  <button onclick="pokazDaty()">Pokaż daty</button>
+
+  <p><strong>1. Dzisiejsza data:</strong> <span id="data1"></span></p>
+  <p><strong>2. Wybrana data:</strong> <span id="data2"></span></p>
+  <p><strong>3. Stała data:</strong> <span id="data3"></span></p>
+
+  <script>
+    function pokazDaty() {
+      // 1. Dzisiejsza data
+      let dzis = new Date();
+      document.getElementById("data1").textContent = dzis;
+
+      // 2. Data wybrana przez użytkownika
+      let wybor = document.getElementById("dataWybor").value;
+      if (wybor) {
+        let dataWybrana = new Date(wybor);
+        document.getElementById("data2").textContent = dataWybrana;
+      } else {
+        document.getElementById("data2").textContent = "Nie wybrano daty";
+      }
+
+      // 3. Stała data: 12 marca 2000
+      let stalaData = new Date(2000, 2, 12);
+      document.getElementById("data3").textContent = stalaData;
+    }
+  </script>
+</body>
+</html>
