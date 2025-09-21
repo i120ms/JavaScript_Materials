@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3 sposoby na datę</title>
+  </head>
+  <body>
+    <h2>Wyświetlanie daty na 3 sposoby</h2>
+
+    <button onclick="pokazDate()">Pokaż datę</button>
+
+    <p><strong>1. Domyślny format:</strong> <span id="data1"></span></p>
+    <p><strong>2. Format lokalny:</strong> <span id="data2"></span></p>
+    <p><strong>3. Własny format:</strong> <span id="data3"></span></p>
+
+
+    <script>
+      function pokazDate() {
+        let dzis = new Date();
+
+        // 1. Domyślny format
+        document.getElementById("data1").textContent = dzis.toString();
+
+        // 2. Format lokalny (PL)
+        document.getElementById("data2").textContent = dzis.toLocaleDateString("pl-PL", {
+          year: "numeric",
+          month: "long",
+          day: "numeric"
+        });
+
+        // 3. Własny format ręczny
+        let dzien = dzis.getDate();
+        let miesiac = dzis.getMonth() + 1; // miesiące od 0
+        let rok = dzis.getFullYear();
+        document.getElementById("data3").textContent = `${dzien}-${miesiac}-${rok}`;
+      }
+    </script>
+  </body>
+</html>
