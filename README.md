@@ -2,6 +2,6 @@
   JavaScript - Materials
 </h1>
 
-## Foldery
+### Foldery
 [date](./date)
 [tablice](./tablice)
