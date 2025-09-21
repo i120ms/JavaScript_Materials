@@ -4,4 +4,4 @@
 
 ### Foldery
 1. [date](./date) <br>
-2. [tablice](./tablice)
+2. [tablice / arrays](./tablice)
