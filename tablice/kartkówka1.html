@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Tablice - zadanie</title>
+</head>
+<body>
+  <h2>Tablica z 10 losowymi liczbami</h2>
+
+  <button onclick="pokazLiczby()">Pokaż liczby</button>
+
+  <p><strong>Tablica:</strong> <span id="wynik1"></span></p>
+  <p><strong>Tablica odwrócona:</strong> <span id="wynik2"></span></p>
+
+  <script>
+    function pokazLiczby() {
+      // Tworzymy pustą tablicę
+      let tablica = [];
+
+      // Dodajemy 10 losowych liczb 3-cyfrowych (100-999)
+      for (let i = 0; i < 10; i++) {
+        let liczba = Math.floor(Math.random() * 900) + 100;
+        tablica.push(liczba);
+      }
+
+      // Wypisujemy tablicę w kolejności losowania
+      document.getElementById("wynik1").textContent = tablica;
+
+      // Wypisujemy tablicę w odwrotnej kolejności
+      document.getElementById("wynik2").textContent = tablica.reverse();
+    }
+  </script>
+</body>
+</html>
