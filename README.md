@@ -16,6 +16,6 @@ All notes from me and some tasks from ♡ <b>MAŁGORZATA T</b> (JS final boss) �
 
 <font face = "Verdana">
         <p align = "right">
-            i120ms
+            i120ms <sub>2025</sub>
         </p>
 </font>
