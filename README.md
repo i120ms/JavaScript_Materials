@@ -3,5 +3,5 @@
 </h1>
 
 ### Foldery
-[date](./date)_
+[date](./date) 
 [tablice](./tablice)
