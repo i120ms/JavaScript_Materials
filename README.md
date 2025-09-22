@@ -6,6 +6,7 @@ All notes from me and some tasks from ♡ <b>MAŁGORZATA T</b> (JS final boss) �
 ### Foldery
 1. [Date](./date) <br>
 2. [Tablice / Arrays](./tablice)
+3. [String](./string)
 
 <br><br>
 
