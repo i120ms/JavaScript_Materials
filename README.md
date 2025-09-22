@@ -7,7 +7,7 @@ All notes from me and some tasks from ♡ <b>MAŁGORZATA T</b> (JS final boss) �
 1. [Date](./date) <br>
 2. [Tablice / Arrays](./tablice)
 3. [String](./string)
-4. [Funkcje i .getElementById](./funkcje_i_getElementById)
+4. [Funkcje_i_.getElementById](./funkcje_i_getElementById)
 
 <br><br>
 
