@@ -4,13 +4,14 @@
 All notes from me and some tasks from ♡ <b>MAŁGORZATA T</b> (JS final boss) ♡ - enjoy
 
 ### Foldery
-## Ogólne
+##### Ogólne
 1. [Date](./date) <br>
 2. [Tablice / Arrays](./tablice)
 3. [String](./string)
 4. [Funkcje i .getElementById](./funkcja_i_getElementById)
 <br>
-## Przyciski
+##### Przyciski 
+<br>
 1. [Radio](./radio)
 
 <br><br>
