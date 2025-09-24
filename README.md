@@ -9,9 +9,7 @@ All notes from me and some tasks from ♡ <b>MAŁGORZATA T</b> (JS final boss) �
 2. [Tablice / Arrays](./tablice)
 3. [String](./string)
 4. [Funkcje i .getElementById](./funkcja_i_getElementById)
-
-##### Przyciski 
-1. [Radio](./radio)
+5. [Buttons / Przyciski](./buttons)
 
 <br><br>
 
