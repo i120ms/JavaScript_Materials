@@ -5,11 +5,12 @@ All notes from me and some tasks from ♡ <b>MT</b> (JS final boss) ♡ - enjoy
 
 ### Foldery
 ##### Ogólne
-1. [Loops / Pętle](./loops)
-2. [String](./string)
-3. [Date](./date)
-4. [Tablice / Arrays](./tablice)
-5. [Functions / Funkcje i .getElementById](./funkcja_i_getElementById)
+1. [If](./if)
+2. [Loops / Pętle](./loops)
+3. [String](./string)
+4. [Date](./date)
+5. [Tablice / Arrays](./tablice)
+6. [Functions / Funkcje i .getElementById](./funkcja_i_getElementById)
 ##### HTML Events
 1. [Buttons / Przyciski](./buttons)
 
