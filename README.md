@@ -3,8 +3,8 @@
 </h1>
 All notes from me and some tasks from ♡ <b>MT</b> (JS final boss) ♡ - enjoy
 
-### Foldery :
-##### Ogólne
+## Foldery :
+#### Ogólne
 1. [If](./if)
 2. [Loops / Pętle](./loops)
 3. [String](./string)
@@ -13,7 +13,7 @@ All notes from me and some tasks from ♡ <b>MT</b> (JS final boss) ♡ - enjoy
 6. [Sets](./sets)
 7. [Functions / Funkcje](./functions)
 8. [Math](./math)
-##### HTML Events
+#### HTML Events
 1. [Buttons / Przyciski](./buttons) 
 <br> &nbsp;&nbsp;&nbsp;&nbsp; • [Zadanie kwiaty](./buttons/kwiaty_zadanie)
 2. [Select](./select)
