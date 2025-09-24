@@ -16,6 +16,7 @@ All notes from me and some tasks from ♡ <b>MT</b> (JS final boss) ♡ - enjoy
 ##### HTML Events
 1. [Buttons / Przyciski](./buttons)
 2. [Select](./select)
+3. [Option](./option)
 
 <br><br>
 
