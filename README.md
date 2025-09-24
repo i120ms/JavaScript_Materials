@@ -10,7 +10,7 @@ All notes from me and some tasks from ♡ <b>MT</b> (JS final boss) ♡ - enjoy
 3. [Date](./date)
 4. [Tablice / Arrays](./tablice)
 5. [Functions / Funkcje i .getElementById](./funkcja_i_getElementById)
-##### Additional HTML events
+##### HTML Events
 1. [Buttons / Przyciski](./buttons)
 
 <br><br>
