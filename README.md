@@ -14,7 +14,7 @@ All notes from me and some tasks from ♡ <b>MT</b> (JS final boss) ♡ - enjoy
 7. [Functions / Funkcje](./functions)
 8. [Math](./math)
 ##### HTML Events
-1. [Buttons / Przyciski](./buttons) <br> &nbsp;&nbsp; [Zadanie kwiaty](./buttons/kwiaty_zadanie)
+1. [Buttons / Przyciski](./buttons) <br> &nbsp;&nbsp;&nbsp;&nbsp; - [Zadanie kwiaty](./buttons/kwiaty_zadanie)
 2. [Select](./select)
 3. [Option](./option)
 
