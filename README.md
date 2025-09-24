@@ -3,7 +3,7 @@
 </h1>
 All notes from me and some tasks from ♡ <b>MT</b> (JS final boss) ♡ - enjoy
 
-### Foldery
+### Foldery :
 ##### Ogólne
 1. [If](./if)
 2. [Loops / Pętle](./loops)
