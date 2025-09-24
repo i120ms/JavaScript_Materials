@@ -10,7 +10,7 @@ All notes from me and some tasks from ♡ <b>MAŁGORZATA T</b> (JS final boss) �
 3. [Date](./date)
 4. [Tablice / Arrays](./tablice)
 5. [Funkcje i .getElementById](./funkcja_i_getElementById)
-##### Additional HTML 
+##### Additional HTML events
 1. [Buttons / Przyciski](./buttons)
 
 <br><br>
