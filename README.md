@@ -5,11 +5,13 @@ All notes from me and some tasks from ♡ <b>MAŁGORZATA T</b> (JS final boss) �
 
 ### Foldery
 ##### Ogólne
-1. [Date](./date) <br>
-2. [Tablice / Arrays](./tablice)
-3. [String](./string)
-4. [Funkcje i .getElementById](./funkcja_i_getElementById)
-5. [Buttons / Przyciski](./buttons)
+1. [Loops / Pętle](./loops)
+2. [Date](./date)
+3. [Tablice / Arrays](./tablice)
+4. [String](./string)
+5. [Funkcje i .getElementById](./funkcja_i_getElementById)
+##### HTML part
+1. [Buttons / Przyciski](./buttons)
 
 <br><br>
 
