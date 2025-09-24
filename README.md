@@ -11,7 +11,6 @@ All notes from me and some tasks from ♡ <b>MAŁGORZATA T</b> (JS final boss) �
 4. [Funkcje i .getElementById](./funkcja_i_getElementById)
 
 ##### Przyciski 
-<br>
 1. [Radio](./radio)
 
 <br><br>
