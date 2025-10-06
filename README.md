@@ -19,7 +19,7 @@ All notes from me and some tasks from ♡ <b>MT (JS final boss)</b> ♡ - enjoy
 2. [Select](./select)
 3. [Option](./option)
 #### Tasks
-[Tasks / Zadania](./zadania)
+[All Tasks / Wszystkie Zadania](./zadania)
 
 <br><br>
 
