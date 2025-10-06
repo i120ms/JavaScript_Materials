@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+<html lang="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let info = ["", "Zgoda na udział w lekcjach religii", "Zgoda na udział w lekcjach edukacji zdrowotnej", "Zgoda na wizerunek"];
+        let uczniowie = [];
+
+        function dodajinfo(){
+            let podana = document.getElementById("x").value;
+            let box1 = document.getElementById("ch1").checked;
+            let box2 = document.getElementById("ch2").checked;
+            let box3 = document.getElementById("ch3").checked;
+            let uczen = [podana, box1, box2, box3];
+            uczniowie.push(uczen);
+        }
+
+        function religia(){
+            let UCZNIOWIEr = [];
+            uczniowie.forEach(element => {
+                if (element[1] == true){
+                    UCZNIOWIEr.push(element[0])
+                }
+            });
+            document.getElementById("r").innerHTML = UCZNIOWIEr
+        }
+
+        function ez(){
+            let UCZNIOWIEez = [];
+            uczniowie.forEach(element => {
+                if (element[2] == true){
+                    UCZNIOWIEez.push(element[0])
+                }
+            });
+            document.getElementById("ez").innerHTML = UCZNIOWIEez
+        }
+
+        function wizerunek(){
+            let UCZNIOWIEw = [];
+            uczniowie.forEach(element => {
+                if (element[3] == true){
+                    UCZNIOWIEw.push(element[0])
+                }
+            });
+            document.getElementById("w").innerHTML = UCZNIOWIEw
+        }
+    </script>
+
+    Nazwisko:
+    <input type="x" id="x"> <br><br>
+    <input type="checkbox" name="Zgoda" id="ch1"> Zgoda na udział w lekcjach religii <br><br>
+    <input type="checkbox" name="Zgoda" id="ch2"> Zgoda na udział w lekcjach edukacji zdrowotnej <br><br>
+    <input type="checkbox" name="Zgoda" id="ch3"> Zgoda na wizerunek <br><br>
+
+    <input type="button" value="Dodaj info" onclick="dodajinfo()"> <br><br><br><br>
+
+    Uczniowie biorący udział w lekcjach religii: <span id ="r"></span><input type="button" value="Podaj" onclick="religia()"> <br><br>
+    Uczniowie biorący udział w lekcjach edukacji zdrowotnej: <span id ="ez"></span><input type="button" value="Podaj" onclick="ez()"> <br><br>
+    Uczniowie ze zgodą na publikację wizerunku: <span id ="w"></span><input type="button" value="Podaj" onclick="wizerunek()"> <br><br>
+</body>
+</html>
