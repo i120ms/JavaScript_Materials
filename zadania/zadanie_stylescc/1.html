@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <input type="text" id="imie">
+        <input type="button" value="dodaj" onclick="dodaj()">
+        <br>
+        4at<input type="radio" name="a" id="a">
+        4bt<input type="radio" name="a" id="b">
+    </header>
+
+    <main id="container"></main>
+
+    <script>
+        function dodaj(){
+            let container = document.getElementById("container");
+            let nowydiv = document.createElement("div");
+            let radio1 = document.getElementById("a");
+            let radio2 = document.getElementById("b");
+            container.appendChild(nowydiv);
+            let text = document.getElementById("imie").value;
+            let akapit = document.createElement("e");
+            akapit.innerHTML = text;
+            nowydiv.appendChild(akapit);
+
+            /* let isacc1 = document.createElement("img");
+            isacc1.src = "dancing.gif";
+            isacc1.alt = "isacc";
+            isacc1.height = 400;
+            isacc1.width = 400;
+            nowydiv.appendChild(isacc1); */
+
+            let x = "dancing.gif"
+            if(radio1.checked){
+                x = "dancing2.gif"
+            } else{
+                if(radio2.checked){
+                    x = "dancing3.gif"
+                } else{
+                    x = "dancing.gif"
+                }
+            }
+
+            let isacc2 = document.createElement("img");
+                isacc2.src = x;
+                isacc2.alt = "isacc2";
+                isacc2.height = 400;
+                isacc2.width = 400;
+                nowydiv.appendChild(isacc2);
+        }
+    </script>
+</body>
+</html>

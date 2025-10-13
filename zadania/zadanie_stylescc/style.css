@@ -1,0 +1,26 @@
+header{
+    height: 10vh;
+    width: 90%;
+    background-color: slategray;
+    margin: auto;
+    padding: 10px;
+}
+
+main{
+    height: 80vh;
+    width: 90%;
+    background-color: cornsilk;
+    margin: 5%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    overflow: auto;
+}
+
+div{
+    height: 400px;
+    width: 400px;
+    background-color: cornflowerblue;
+    margin: 10px;
+    padding: 10px;
+}
