@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dostawa kwiatów</title>
+</head>
+<body>
+    <h1>Dostawa kwiatów</h1>
+
+    <div>
+        <h3>Wybierz bukiet</h3>
+        <label>Wybierz kwiaty:
+            <select id="kwiaty">
+                <option value="róże">Róże</option>
+                <option value="tulipany">Tulipany</option>
+                <option value="goździki">Goździki</option>
+                <option value="stokrotki">Stokrotki</option>
+            </select>
+        </label><br><br>
+
+        <label>Podaj ile sztuk:
+            <input type="number" id="ilosc" min="1" value="1">
+        </label><br><br>
+
+        <label>Przybranie (5zł):
+            <input type="radio" name="przybranie" value="tak"> Tak
+            <input type="radio" name="przybranie" value="nie" checked> Nie
+        </label><br><br>
+
+        <button onclick="obliczBukiet()">Sprawdź cenę</button><br><br>
+        Koszt bukietu wynosi <span id="kosztBukietu">0</span> zł.
+    </div>
+
+
+    <hr>
+
+
+    <div>
+        <h3>Sprawdź koszt dostawy</h3>
+        <label>Dzień tygodnia:
+            <select id="dzien">
+                <option value="Poniedziałek">Poniedziałek</option>
+                <option value="Wtorek">Wtorek</option>
+                <option value="Środa">Środa</option>
+                <option value="Czwartek">Czwartek</option>
+                <option value="Piątek">Piątek</option>
+                <option value="Sobota">Sobota</option>
+                <option value="Niedziela">Niedziela</option>
+            </select>
+        </label><br><br>
+
+        <label>Pora dostawy:
+            <input type="radio" name="pora" value="rano" checked> 8:00–16:00
+            <input type="radio" name="pora" value="wieczór"> 16:00–22:00
+        </label><br><br>
+
+        <button onclick="obliczDostawe()">Sprawdź cenę</button><br><br>
+        Koszt dostawy wynosi <span id="kosztDostawy">0</span> zł.
+    </div>
+
+
+    <hr>
+
+
+    <div>
+        <strong>Łączna cena za bukiet z dowozem wynosi <span id="lacznaCena">0</span> zł.</strong>
+    </div>
+    
+
+    <script>
+        let kosztBukietu = 0;
+        let kosztDostawy = 0;
+
+        function obliczBukiet() {
+            const kwiat = document.getElementById("kwiaty").value;
+            const ilosc = Number(document.getElementById("ilosc").value);
+            const przybranie = document.querySelector('input[name="przybranie"]:checked').value;
+
+            let cenaJednostkowa = 0;
+            switch (kwiat) {
+                case "róże": cenaJednostkowa = 8; break;
+                case "tulipany": cenaJednostkowa = 6; break;
+                case "goździki": cenaJednostkowa = 5; break;
+                case "stokrotki": cenaJednostkowa = 4; break;
+            }
+
+            kosztBukietu = cenaJednostkowa * ilosc;
+            if (przybranie === "tak") kosztBukietu += 5;
+
+            document.getElementById("kosztBukietu").textContent = kosztBukietu.toFixed(2);
+            obliczLaczna();
+        }
+
+        function obliczDostawe() {
+            const dzien = document.getElementById("dzien").value;
+            const pora = document.querySelector('input[name="pora"]:checked').value;
+
+            kosztDostawy = 10;
+
+            if (dzien === "Sobota" || dzien === "Niedziela") {
+                kosztDostawy += 5;
+            }
+
+            if (pora === "wieczór") {
+                kosztDostawy += 3;
+            }
+
+            document.getElementById("kosztDostawy").textContent = kosztDostawy.toFixed(2);
+            obliczLaczna();
+        }
+
+        function obliczLaczna() {
+            const laczna = kosztBukietu + kosztDostawy;
+            document.getElementById("lacznaCena").textContent = laczna.toFixed(2);
+        }
+    </script>
+</body>
+</html>
