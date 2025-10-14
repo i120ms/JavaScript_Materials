@@ -18,7 +18,7 @@ All notes from me and some tasks from ♡ <b>MT (JS final boss)</b> ♡ - enjoy
 <br> &nbsp;&nbsp;&nbsp;&nbsp; • [Zadanie kwiaty](./buttons/kwiaty_zadanie)
 2. [Select](./select)
 3. [Option](./option)
-#### Tasks
+#### Zadania
 [All Tasks / Wszystkie Zadania](./zadania)
 
 <br><br>
