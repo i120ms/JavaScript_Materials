@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dostawa kwiatów</title>
+</head>
+<body>
+    <h1>Dostawa kwiatów</h1>
+
+    <div>
+        <h3>Wybierz bukiet</h3>
+        <label>Wybierz kwiaty:
+            <select id="kwiaty">
+                <option value="róże">Róże</option>
+                <option value="tulipany">Tulipany</option>
+                <option value="goździki">Goździki</option>
+                <option value="stokrotki">Stokrotki</option>
+            </select>
+        </label><br><br>
+
+        <label>Podaj ile sztuk:
+            <input type="number" id="ilosc" min="1" value="1">
+        </label><br><br>
+
+        <label>Przybranie (5zł):
+            <input type="radio" name="przybranie" value="tak"> Tak
+            <input type="radio" name="przybranie" value="nie" checked> Nie
+        </label><br><br>
+
+        <button onclick="obliczBukiet()">Sprawdź cenę</button><br><br>
+        Koszt bukietu wynosi <span id="kosztBukietu">0</span> zł.
+    </div>
+
+
+    <hr>
+
+
+    <div>
+        <h3>Sprawdź koszt dostawy</h3>
+        <label>Dzień tygodnia:
+            <select id="dzien">
+                <option value="Poniedziałek">Poniedziałek</option>
+                <option value="Wtorek">Wtorek</option>
+                <option value="Środa">Środa</option>
+                <option value="Czwartek">Czwartek</option>
+                <option value="Piątek">Piątek</option>
+                <option value="Sobota">Sobota</option>
+                <option value="Niedziela">Niedziela</option>
+            </select>
+        </label><br><br>
+
+        <label>Pora dostawy:
+            <input type="radio" name="pora" value="rano" checked> 8:00–16:00
+            <input type="radio" name="pora" value="wieczór"> 16:00–22:00
+        </label><br><br>
+
+        <button onclick="obliczDostawe()">Sprawdź cenę</button><br><br>
+        Koszt dostawy wynosi <span id="kosztDostawy">0</span> zł.
+    </div>
+
+
+    <hr>
+
+
+    <div>
+        <strong>Łączna cena za bukiet z dowozem wynosi <span id="lacznaCena">0</span> zł.</strong>
+    </div>
+
+        <script>
+function obliczBukiet() {
+    // Pobranie danych z formularza
+    let kwiat = document.getElementById("kwiaty").value;
+    let ilosc = Number(document.getElementById("ilosc").value);
+    let przybranie = document.querySelector('input[name="przybranie"]:checked').value;
+
+    // Cena jednej sztuki kwiatu
+    let cenaJednego = 0;
+
+    if (kwiat == "róże") {
+        cenaJednego = 8;
+    } else if (kwiat == "tulipany") {
+        cenaJednego = 6;
+    } else if (kwiat == "goździki") {
+        cenaJednego = 5;
+    } else if (kwiat == "stokrotki") {
+        cenaJednego = 4;
+    }
+
+    // Obliczenie kosztu bukietu
+    let kosztBukietu = cenaJednego * ilosc;
+
+    // Jeśli wybrane jest przybranie, dodaj 5 zł
+    if (przybranie == "tak") {
+        kosztBukietu = kosztBukietu + 5;
+    }
+
+    // Wyświetlenie wyniku
+    document.getElementById("kosztBukietu").textContent = kosztBukietu;
+}
+
+function obliczDostawe() {
+    // Pobranie danych o dniu i porze dostawy
+    let dzien = document.getElementById("dzien").value;
+    let pora = document.querySelector('input[name="pora"]:checked').value;
+
+    // Podstawowy koszt dostawy
+    let kosztDostawy = 10;
+
+    // W weekend drożej o 5 zł
+    if (dzien == "Sobota" || dzien == "Niedziela") {
+        kosztDostawy = kosztDostawy + 5;
+    }
+
+    // Wieczorem drożej o 3 zł
+    if (pora == "wieczór") {
+        kosztDostawy = kosztDostawy + 3;
+    }
+
+    // Wyświetlenie wyniku
+    document.getElementById("kosztDostawy").textContent = kosztDostawy;
+}
+
+function obliczLaczna() {
+    // Pobranie kosztów z ekranu
+    let bukiet = Number(document.getElementById("kosztBukietu").textContent);
+    let dostawa = Number(document.getElementById("kosztDostawy").textContent);
+
+    // Obliczenie łącznej ceny
+    let razem = bukiet + dostawa;
+
+    // Wyświetlenie wyniku
+    document.getElementById("lacznaCena").textContent = razem;
+}
+    </script>
+</body>
+</html>
