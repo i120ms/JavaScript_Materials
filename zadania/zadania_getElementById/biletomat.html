@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kalkulator biletów (prosty HTML)</title>
+
+  <style>
+    :root {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      line-height: 1.5;
+    }
+    body {
+      background: #f7f8fb;
+      color: #111;
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+    form {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    fieldset {
+      border: none;
+      margin-bottom: 20px;
+    }
+    legend {
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    label {
+      display: block;
+      margin-bottom: 8px;
+    }
+    select, input[type="number"] {
+      padding: 6px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      width: 100%;
+      max-width: 200px;
+    }
+    input[type="radio"] {
+      margin-right: 6px;
+    }
+    button {
+      background: #0b74de;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #095bb5;
+    }
+  </style>
+</head>
+<body>
+
+
+
+
+
+  <h1>Biletomat</h1>
+
+  <form>
+    <fieldset>
+      <legend>1. Zniżka</legend>
+      <label><input type="radio" name="discount" value="normalny" checked> Normalny</label>
+      <label><input type="radio" name="discount" value="ulgowy"> Ulgowy (50% taniej)</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>2. Bilety</legend>
+      <label for="ticket">Wybierz bilet:</label>
+      <select id="ticket" name="ticket">
+        <option value="1przejazd">1 przejazd</option>
+        <option value="15min">15 min</option>
+        <option value="30min">30 min</option>
+        <option value="60min">60 min</option>
+      </select>
+    </fieldset>
+
+    <fieldset>
+      <legend>3. Ilość</legend>
+      <label for="ilosc">Podaj ilość:</label>
+      <input type="number" id="ilosc" name="ilosc" min="1" value="1">
+    </fieldset>
+
+    <fieldset>
+      <legend>4. Sprawdź ile wychodzi</legend>
+      <button type="button" onclick="f1()">Sprawdź</button><br>
+      <strong>Suma wynosi:<span id="suma">&nbsp;0.00zł&nbsp;</span></strong>
+    </fieldset>
+  </form>
+  
+  <script>
+    function f1(){
+        let znizka = document.querySelector('input[name="discount"]:checked').value;
+        let rodzaj = document.getElementById("ticket").value;
+        let ilosc = Number(document.getElementById("ilosc").value);
+
+        let ceny = {
+            "1przejazd": 4, "15min": 6, "30min": 8, "60min": 10
+        };
+
+        let cena = ceny[rodzaj];
+
+        if(znizka == "ulgowy"){
+            cena = cena * 0.5;
+        }
+
+        let suma = ilosc * cena;
+
+        document.getElementById("suma").textContent = suma.toFixed(2) + " zł";
+    }
+  </script>
+</body>
+</html>
