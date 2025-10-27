@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Węzły - zadanie 1</title>
+    <style>
+        nav img{
+            width: 15%;
+        }
+        nav{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        #container{
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            overflow: auto;
+        }
+        #duze_zdjecie{
+            width: 45%;
+            margin: 3%;
+        }
+    </style>
+    <header><h1 style="text-align: center;">Zwierzęta</h1></header>
+    <nav>
+        <img src="leniwiec.jpg" alt="leniwiec" onclick="f1('leniwiec.jpg')">
+        <img src="koza4.jpg" alt="koza4" onclick="f1('koza4.jpg')">
+        <img src="koza3.jpg" alt="koza3" onclick="f1('koza3.jpg')">
+        <img src="leniwiec2.jpg" alt="leniwiec2" onclick="f1('leniwiec2.jpg')">
+        <img src="puma.jpg" alt="puma" onclick="f1('puma.jpg')">
+        <img src="slon.jpg" alt="slon" onclick="f1('slon.jpg')">
+    </nav>
+    <main>
+        <div id="cont"></div>
+    </main>
+</head>
+<body>
+    <script>
+        function f1(zwierze){
+            let container = document.getElementById("cont");
+            let zdjecie = document.createElement("img");
+            
+            zdjecie.src = zwierze;
+            zdjecie.classList.add("duze_zdjecie");
+            container.appendChild(zdjecie);
+        }
+    </script>
+</body>
+</html>
