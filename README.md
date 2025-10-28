@@ -1,5 +1,5 @@
 <h1 align="center" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
-  JavaScript - Materials
+  JavaScript Materials
 </h1>
 All notes from me and some tasks from ♡ <b>MT (JS final boss)</b> ♡ - enjoy
 
