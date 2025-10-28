@@ -17,7 +17,7 @@ All notes from me and some tasks from ♡ <b>MT (JS final boss)</b> ♡ - enjoy
 1. [Buttons / Przyciski](./buttons) 
 2. [Select](./select)
 3. [Option](./option)
-#### Zadania
+#### Tasks
 [All Tasks / Wszystkie Zadania](./zadania)
 
 <br><br>
