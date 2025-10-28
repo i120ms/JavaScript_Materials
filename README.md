@@ -4,7 +4,7 @@
 All notes from me and some tasks from ♡ <b>MT (JS final boss)</b> ♡ - enjoy
 
 ## Folders :
-#### Overall
+#### JS
 1. [If](./if)
 2. [Loops / Pętle](./loops)
 3. [String](./string)
