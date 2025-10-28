@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kalkulator zakupu gier</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #f7f7f7;
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  fieldset {
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    padding: 10px;
+  }
+  legend {
+    font-weight: bold;
+  }
+  label {
+    display: block;
+    margin: 5px 0;
+  }
+  button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: #388E3C;
+  }
+  #suma {
+    font-weight: bold;
+    color: #333;
+  }
+</style>
+</head>
+<body>
+
+  <h1>Kalkulator zakupu gier 🎮</h1>
+
+  <form>
+    <fieldset>
+      <legend>1. Rodzaj gry</legend>
+      <select id="rodzaj">
+        <option value="pc">PC</option>
+        <option value="ps">PlayStation</option>
+        <option value="xbox">Xbox</option>
+      </select>
+    </fieldset>
+
+    <fieldset>
+      <legend>2. Wersja gry</legend>
+      <label><input type="radio" name="wersja" value="cyfrowa" checked> Cyfrowa</label>
+      <label><input type="radio" name="wersja" value="pudelkowa"> Pudełkowa (+10 zł)</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>3. Edycja</legend>
+      <select id="edycja">
+        <option value="standard">Standard</option>
+        <option value="deluxe">Deluxe</option>
+        <option value="kolekcjonerska">Kolekcjonerska</option>
+      </select>
+    </fieldset>
+
+    <fieldset>
+      <legend>4. Ilość sztuk</legend>
+      <input type="number" id="ilosc" min="1" value="1">
+    </fieldset>
+
+    <fieldset>
+      <legend>5. Wynik</legend>
+      <button type="button" onclick="oblicz()">Oblicz cenę</button>
+      <p>Do zapłaty: <span id="suma">0.00 zł</span></p>
+    </fieldset>
+  </form>
+
+  <script>
+    function oblicz(){
+        let rodzaj = document.getElementById("rodzaj").value;
+        let wersja = document.querySelector('input[name="wersja"]:checked').value;
+        let edycja = document.getElementById("edycja").value;
+        let ilosc = Number(document.getElementById("ilosc").value);
+
+        let cenyR = {
+            "pc" : 120, "ps" : 200, "xbox" : 180
+        };
+        let cenaR = cenyR[rodzaj];
+
+        let cenyE = {
+            "standard" : 0, "deluxe" : 40, "kolekcjonerska" : 100
+        };
+        let cenaE = cenyE[edycja];
+        let cena = cenaR + cenaE;
+
+        if(wersja == "pudelkowa"){
+            cena = cena + 10;
+        }
+
+        let suma = ilosc * cena
+        document.getElementById("suma").textContent = suma.toFixed(2) + " zł";
+    }
+  </script>
+
+</body>
+</html>
