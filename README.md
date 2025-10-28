@@ -3,8 +3,8 @@
 </h1>
 All notes from me and some tasks from ♡ <b>MT (JS final boss)</b> ♡ - enjoy
 
-## Foldery :
-#### Ogólne
+## Folders :
+#### Overall
 1. [If](./if)
 2. [Loops / Pętle](./loops)
 3. [String](./string)
