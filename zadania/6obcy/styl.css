@@ -1,0 +1,12 @@
+*{
+    font-family: Garamond;
+}
+main{
+    display: flex;
+}
+header{
+    background-color: tomato;
+    color: white;
+    text-align: center;
+    height: 80px;
+}
