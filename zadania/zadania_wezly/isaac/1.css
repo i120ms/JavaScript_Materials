@@ -1,0 +1,18 @@
+nav img{
+            width: 15%;
+        }
+        nav{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        #container{
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            overflow: auto;
+        }
+        #duze_zdjecie{
+            width: 45%;
+            margin: 3%;
+        }
