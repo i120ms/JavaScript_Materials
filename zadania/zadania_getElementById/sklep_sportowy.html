@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sklep sportowy – piłki</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #f0f8ff;
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+  }
+
+  .container {
+    background: #fff;
+    padding: 20px 25px;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.1);
+    width: 350px;
+  }
+
+  h1 {
+    text-align: center;
+    color: #1e90ff;
+  }
+
+  fieldset {
+    border: none;
+    margin-bottom: 15px;
+  }
+
+  label {
+    display: block;
+    margin: 5px 0;
+  }
+
+  select, input[type="number"] {
+    width: 100%;
+    padding: 6px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin-top: 5px;
+  }
+
+  input[type="radio"], input[type="checkbox"] {
+    margin-right: 6px;
+    accent-color: #1e90ff;
+  }
+
+  button {
+    width: 100%;
+    padding: 8px;
+    background: #1e90ff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+
+  button:hover {
+    background: #187bcd;
+  }
+
+  #suma {
+    display: block;
+    text-align: center;
+    margin-top: 12px;
+    font-weight: bold;
+    font-size: 18px;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Sklep sportowy</h1>
+
+  <fieldset>
+    <legend>1. Wybierz rodzaj piłki</legend>
+    <select id="pilka">
+      <option value="nozna">Piłka nożna – 80 zł</option>
+      <option value="koszykowa">Piłka koszykowa – 90 zł</option>
+      <option value="siatkowa">Piłka siatkowa – 70 zł</option>
+    </select>
+  </fieldset>
+
+  <fieldset>
+    <legend>2. Rozmiar</legend>
+    <label><input type="radio" name="rozmiar" value="standard" checked> Standard</label>
+    <label><input type="radio" name="rozmiar" value="duza"> Duża (+20 zł)</label>
+  </fieldset>
+
+  <fieldset>
+    <legend>3. Liczba sztuk</legend>
+    <input type="number" id="ilosc" min="1" value="1">
+  </fieldset>
+
+  <fieldset>
+    <label><input type="checkbox" id="worek"> Worek transportowy (+15 zł)</label>
+  </fieldset>
+
+  <button type="button" onclick="oblicz()">Sprawdź cenę</button>
+
+  <span id="suma">0 zł</span>
+</div>
+
+<script>
+    function oblicz(){
+        let rodzaj = document.getElementById("pilka").value;
+        let rozmiar = document.querySelector('input[name="rozmiar"]:checked').value;
+        let ilosc = Number(document.getElementById("ilosc").value);
+        let worek;
+
+        let ceny = {
+            "nozna" : 80, "koszykowa" : 90, "siatkowa" : 70
+        };
+        let cena = ceny[rodzaj];
+
+        if(rozmiar == "duza"){
+            cena += 20;
+        }
+        if(document.getElementById("worek").checked){
+            cena += 15;
+        }
+
+        let suma = cena * ilosc;
+        document.getElementById("suma").textContent = suma.toFixed(2) + " zł.";
+    }
+</script>
+</body>
+</html>
