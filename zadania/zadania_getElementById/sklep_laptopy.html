@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kalkulator laptopów</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #f4f6f9;
+      margin: 0;
+      padding: 30px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      background: #fff;
+      padding: 25px 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      width: 420px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 25px;
+    }
+
+    fieldset {
+      border: none;
+      margin-bottom: 20px;
+      padding: 0;
+    }
+
+    legend {
+      font-weight: bold;
+      margin-bottom: 8px;
+      color: #222;
+    }
+
+    select, input[type="number"] {
+      width: 100%;
+      padding: 8px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+      margin-top: 6px;
+    }
+
+    label {
+      display: block;
+      margin: 5px 0;
+      cursor: pointer;
+    }
+
+    input[type="radio"],
+    input[type="checkbox"] {
+      margin-right: 6px;
+      accent-color: #0078d7;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #0078d7;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 10px;
+      transition: background 0.2s;
+    }
+
+    button:hover {
+      background: #005fa3;
+    }
+
+    #suma {
+      display: block;
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 15px;
+      color: #222;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🖥️ Kalkulator laptopów</h1>
+
+    <form>
+      <fieldset>
+        <legend>1. Wybierz markę</legend>
+        <select id="rodzaj">
+          <option value="lenovo">Lenovo – 2500 zł</option>
+          <option value="dell">Dell – 3000 zł</option>
+          <option value="apple">Apple – 5500 zł</option>
+        </select>
+      </fieldset>
+
+      <fieldset>
+        <legend>2. Procesor</legend>
+        <label><input type="radio" name="wersja" value="i5" checked> Intel i5 (bez dopłaty)</label>
+        <label><input type="radio" name="wersja" value="i7"> Intel i7 (+600 zł)</label>
+        <label><input type="radio" name="wersja" value="i9"> Intel i9 (+1200 zł)</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>3. Dodatki</legend>
+        <label><input type="checkbox" id="torba"> Torba (+100 zł)</label>
+        <label><input type="checkbox" id="mysz"> Mysz bezprzewodowa (+80 zł)</label>
+        <label><input type="checkbox" id="office"> Pakiet Office (+350 zł)</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>4. Ilość</legend>
+        <input type="number" id="ilosc" min="1" value="1">
+      </fieldset>
+
+      <button type="button" onclick="oblicz()">💰 Oblicz cenę</button>
+
+      <span id="suma">Łączna kwota: 0.00 zł</span>
+    </form>
+  </div>
+
+  <script>
+    function oblicz(){
+        let rodzaj = document.getElementById("rodzaj").value;
+        let procesor = document.querySelector('input[name="wersja"]:checked').value;
+        let dodatki;
+        let ilosc = Number(document.getElementById("ilosc").value);
+
+        let cenyR = {
+            "lenovo" : 2500, "dell" : 3000, "apple" : 5500
+        };
+        let cenaR = cenyR[rodzaj];
+        let cena = cenaR
+
+        if(document.getElementById("torba").checked){
+            cena += 100;
+        }if(document.getElementById("mysz").checked){
+            cena += 80;
+        }if(document.getElementById("office").checked){
+            cena += 350;
+        }
+
+        if(procesor == "i7"){
+            cena += 600;
+        }else if(procesor == "i9"){
+            cena += 1200;
+        }
+
+        let suma = ilosc * cena;
+        document.getElementById("suma").textContent = suma.toFixed(2) + " zł.";
+    }
+  </script>
+</body>
+</html>

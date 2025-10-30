@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zamówienie pizzy</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #fff4e6;
+      margin: 0;
+      padding: 30px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      background: #fff;
+      padding: 25px 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      width: 450px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #d35400;
+      margin-bottom: 25px;
+    }
+
+    fieldset {
+      border: none;
+      margin-bottom: 20px;
+      padding: 0;
+    }
+
+    legend {
+      font-weight: bold;
+      margin-bottom: 8px;
+      color: #222;
+    }
+
+    select, input[type="number"] {
+      width: 100%;
+      padding: 8px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+      margin-top: 6px;
+    }
+
+    label {
+      display: block;
+      margin: 5px 0;
+      cursor: pointer;
+    }
+
+    input[type="radio"] {
+      margin-right: 6px;
+      accent-color: #e67e22;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #e67e22;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 10px;
+      transition: background 0.2s;
+    }
+
+    button:hover {
+      background: #ca6f1e;
+    }
+
+    #kosztPizza, #kosztDostawy, #lacznaCena {
+      display: block;
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 10px;
+      color: #222;
+    }
+
+    hr {
+      margin: 30px 0;
+      border: 0;
+      border-top: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🍕 Zamów pizzę</h1>
+
+    <div>
+      <fieldset>
+        <legend>1. Wybór pizzy</legend>
+        <label>Rodzaj pizzy:
+          <select id="pizza">
+            <option value="margherita">Margherita – 20 zł</option>
+            <option value="pepperoni">Pepperoni – 25 zł</option>
+            <option value="hawajska">Hawajska – 28 zł</option>
+            <option value="vegetariana">Vegetariana – 22 zł</option>
+          </select>
+        </label><br><br>
+
+        <label>Rozmiar pizzy:
+          <input type="radio" name="rozmiar" value="mala" checked> Mała
+          <input type="radio" name="rozmiar" value="srednia"> Średnia (+5 zł)
+          <input type="radio" name="rozmiar" value="duza"> Duża (+10 zł)
+        </label><br><br>
+
+        <label>Liczba pizz:
+          <input type="number" id="iloscPizza" min="1" value="1">
+        </label><br><br>
+
+        <button type="button" onclick="obliczPizza()">Sprawdź koszt</button><br>
+        Koszt pizzy wynosi <span id="kosztPizza">0</span> zł.
+      </fieldset>
+    </div>
+
+    <hr>
+
+    <div>
+      <fieldset>
+        <legend>2. Dostawa</legend>
+        <label>Dzień tygodnia:
+          <select id="dzienPizza">
+            <option value="Poniedziałek">Poniedziałek</option>
+            <option value="Wtorek">Wtorek</option>
+            <option value="Środa">Środa</option>
+            <option value="Czwartek">Czwartek</option>
+            <option value="Piątek">Piątek</option>
+            <option value="Sobota">Sobota</option>
+            <option value="Niedziela">Niedziela</option>
+          </select>
+        </label><br><br>
+
+        <label>Opcja dostawy:
+          <input type="radio" name="dostawaOpcja" value="standard" checked> Standard – 5 zł
+          <input type="radio" name="dostawaOpcja" value="ekspres"> Ekspres – +5 zł
+        </label><br><br>
+
+        <button type="button" onclick="obliczDostawe()">Sprawdź koszt</button><br>
+        Koszt dostawy wynosi <span id="kosztDostawy">0</span> zł.
+      </fieldset>
+    </div>
+
+    <hr>
+
+    <div>
+      <strong>Łączna cena za pizzę z dowozem wynosi <span id="lacznaCena">0</span> zł.</strong>
+    </div>
+
+    <script>
+        function obliczPizza(){
+            let pizza = document.getElementById("pizza").value;
+            let rozmiar = document.querySelector('input[name="rozmiar"]:checked').value;
+            let iloscP = Number(document.getElementById("iloscPizza").value);
+
+            ceny = {
+                "margherita" : 20, "pepperoni" : 25, "hawajska" : 28, "vegetariana" : 22
+            };
+            let cena = ceny[pizza];
+
+            if(rozmiar == "srednia"){
+                cena += 5;
+            }else if(rozmiar == "duza"){
+                cena += 10;
+            }
+
+            kosztP = cena * iloscP;
+            document.getElementById("kosztPizza").textContent = kosztP.toFixed(2);
+            obliczLaczna();
+        }
+
+        function obliczDostawe(){
+            let dzien = document.getElementById("dzienPizza").value;
+            let dostawa = document.querySelector('input[name="dostawaOpcja"]:checked').value;
+
+            let kosztDostawy = 5
+
+            if(dzien == "Sobota" || dzien == "Niedziela"){
+                kosztDostawy += 3;
+            }
+
+            if(dostawa == "ekspres"){
+                kosztDostawy += 5;
+            };
+
+            document.getElementById("kosztDostawy").textContent = kosztDostawy.toFixed(2);
+            obliczLaczna();
+        }
+
+        function obliczLaczna(){
+            let PizzaQ = Number(document.getElementById("kosztPizza").textContent);
+            let DostawaQ = Number(document.getElementById("kosztDostawy").textContent);
+
+            let razem = PizzaQ + DostawaQ;
+            document.getElementById("lacznaCena").textContent = razem;
+        }
+    </script>
+  </div>
+</body>
+</html>
