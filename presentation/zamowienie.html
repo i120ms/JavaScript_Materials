@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fotografia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header></header>
+    <section id="obrazy"></section>
+    <main>
+        <section id="lewy"></section>
+        <section id="naPrawe">
+            <nav></nav>
+            <section id="prawy"></section>
+        </section>
+    </main>
+    <footer></footer>
+
+    <header>
+        <h1>Fotografia artystyczna</h1>
+    </header>
+
+    <section id="obrazy">
+        <img src="Obrazy/1.jpg" alt="obrazy do sprzedazy" title="1.jpg">
+        <img src="Obrazy/2.jpg" alt="obrazy do sprzedazy" title="2.jpg">
+        <img src="Obrazy/3.jpg" alt="obrazy do sprzedazy" title="3.jpg">
+        <img src="Obrazy/4.jpg" alt="obrazy do sprzedazy" title="4.jpg">
+        <img src="Obrazy/5.jpg" alt="obrazy do sprzedazy" title="5.jpg">
+        <img src="Obrazy/6.jpg" alt="obrazy do sprzedazy" title="6.jpg">
+        <img src="Obrazy/7.jpg" alt="obrazy do sprzedazy" title="7.jpg">
+        <img src="Obrazy/8.jpg" alt="obrazy do sprzedazy" title="8.jpg">
+        <img src="Obrazy/9.jpg" alt="obrazy do sprzedazy" title="9.jpg">
+        <img src="Obrazy/10.jpg" alt="obrazy do sprzedazy" title="10.jpg">
+    </section>
+
+    <label for="imie" class="szerokosc120">Imię: </label>
+    <input id="imie" type="text"><br><br>
+    <label for="nazwisko" class="szerokosc120">Nazwisko: </label>
+    <input id="nazwisko" type="text">
+
+    <section id="lewy">
+        <h3>zamowienie</h3>
+        <label for="plikObrazu">Wybierz obraz:</label>
+        <input type="file" id="plikObrazu" accept=".jpg, .jpeg"><br>
+        <label for="ileKopii">Liczba Kopii:</label>
+        <input type="number" id="ileKopii"><br>
+
+        <input type="radio" name="papier" id="blysk" checked> Papier blyszczacy<br>
+        <input type="radio" name="papier" id="mat"> Papier matowy<br>
+
+        <input type="button" value="Dodaj do koszyka" onclick="dodaj()">
+    </section>
+</body>
+</html>
