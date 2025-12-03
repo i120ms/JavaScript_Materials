@@ -19,6 +19,8 @@ All notes from me and some tasks from ♡ <b>MT (JS final boss)</b> ♡ - enjoy
 3. [Option](./option)
 #### Tasks
 [All Tasks / Wszystkie Zadania](./zadania)
+#### Presentation
+[Presentation](./presentation)
 
 <br><br>
 
