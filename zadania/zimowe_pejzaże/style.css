@@ -1,0 +1,28 @@
+body{
+    background-image: linear-gradient(azure, rgb(110, 173, 236));
+    background-attachment: fixed;
+}
+
+header{
+    height: 10vh;
+}
+
+footer{
+    height: 10vh;
+}
+
+main{
+    height: 78vh;
+}
+
+main img{
+    width: 40%;
+}
+
+header img{
+    width: 5%;
+}
+
+footer img{
+    width: 5%;
+}
