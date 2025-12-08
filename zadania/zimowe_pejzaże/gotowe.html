@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Zimowe Pejzaże</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(azure, rgb(110,173,236));
+            height: 100vh;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+
+        header, footer {
+            height: 10vh;
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap; /* nic się nie łamie do kolejnej linii */
+            display: flex;
+            align-items: flex-start;
+        }
+
+        header img, footer img {
+            width: 5%;
+            height: auto;
+            display: inline-block;
+        }
+
+        main {
+            height: 78vh;
+            position: relative;
+            overflow: auto;
+            cursor: pointer;
+        }
+
+        main img {
+            width: 40%;
+            position: absolute;
+            border: 2px solid rgba(255,255,255,0.7);
+        }
+
+        #endText {
+            position: absolute;
+            top: 70%;
+            left: 3%;
+            font-size: 70px;
+            color: white;
+            text-shadow: 10px 10px 5px rgb(65,65,65);
+            z-index: 9999;
+        }
+    </style>
+</head>
+
+<body>
+
+<header></header>
+<main id="main"></main>
+<footer></footer>
+
+<script>
+    let header = document.querySelector("header");
+    let footer = document.querySelector("footer");
+
+    for (let i = 1; i <= 20; i++) {
+        let zdjH = document.createElement("img");
+        let zdjF = document.createElement("img");
+
+        zdjH.src = "platek.png";
+        zdjF.src = "platek.png";
+
+        header.appendChild(zdjH);
+        footer.appendChild(zdjF);
+    }
+
+    /* ---------------------
+       WSTAWIANIE ZDJĘĆ
+    ---------------------- */
+
+    let nr = 1;
+    let x = 10;
+    let y = 13;
+    let z = 1;
+
+    const main = document.getElementById("main");
+
+    main.addEventListener("click", dodajZdjecie);
+
+    function dodajZdjecie() {
+        if (nr <= 7) {
+            const img = document.createElement("img");
+            img.src = `zima${nr}.jpg`;
+            img.style.left = x + "%";
+            img.style.top = y + "%";
+            img.style.zIndex = z;
+
+            main.appendChild(img);
+
+            x += 6;
+            y += 3;
+            z++;
+            nr++;
+        }
+
+        if (nr === 8) {
+            const napis = document.createElement("h2");
+            napis.id = "endText";
+            napis.textContent =
+                "Wszystko - odśwież";
+            main.appendChild(napis);
+        }
+    }
+</script>
+
+</body>
+</html>
