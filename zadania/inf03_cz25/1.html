@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: Verdana;
+        }
+
+        side{
+            width: 20%;
+            height: 610px;
+        }
+
+        side img{
+            width: 100%;
+            height: 610px;
+        }
+
+        header, nav, footer{
+            background-color: cornflowerblue;
+            color: aliceblue;
+            width: 80vw;
+            height: 50px;
+            text-align: center;
+            text-shadow: 4px 4px dimgray;
+        }
+
+        nav{
+            padding-top: 10px;
+        }
+
+        main{
+            background-color: gainsboro;
+            width: 80vw;
+            height: 450px;
+            overflow: auto;
+        }
+
+        li{
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+        }
+
+        li input[type="button"]{
+            background-color: cornflowerblue;
+            color: aliceblue;
+            height: 30px;
+            border: 0;
+        }
+
+        li:hover{
+            background-color: lavender;
+        }
+
+        ul li:nth-child(2n){
+            background-color: #ddcadd;
+        }
+
+        ul{
+            margin: 40px auto;
+            width: 70%;
+            font-size: 25px;
+            border: 2px solid skyblue;
+            list-style-type: none;
+        }
+
+        ul li:nth-child(2n){
+            background-color: #ddcadd;
+        }
+
+        ul li:hover{
+            background-color: lavender;
+        }
+    </style>
+</head>
+<body class="obokSiebie">
+    <aside>
+        <!-- <img src="obraz.jpg" alt="notatki"> -->
+    </aside>
+    <div id="kontener">
+        <header>
+            <h2>Moje zadania</h2>
+        </header>
+        <nav>
+            <input type="text" id="tekst" placeholder="Dodaj zadanie...">
+            <input type="button" value="Dodaj" onclick="dodaj()">
+        </nav>
+        <main>
+            <ul id="lista">
+                <li>
+                    <span id="pp1">Matma</span>
+                    <input type="button" value="Wykonane" onclick="wykonane('pp1')">
+                </li>
+                <li>
+                    <span id="pp2">Angielski</span>
+                    <input type="button" value="Wykonane" onclick="wykonane('pp2')">
+                </li>
+                <li>
+                    <span id="pp3">Polski</span>
+                    <input type="button" value="Wykonane" onclick="wykonane('pp3')">
+                </li>
+                <li>
+                    <span id="pp4">Geografia</span>
+                    <input type="button" value="Wykonane" onclick="wykonane('pp4')">
+                </li>
+                <li>
+                    <span id="pp5">Fizyka</span>
+                    <input type="button" value="Wykonane" onclick="wykonane('pp5')">
+                </li>
+                <li>
+                    <span id="pp6">Mi Bombo</span>
+                    <input type="button" value="Wykonane" onclick="wykonane('pp6')">
+                </li>
+            </ul>
+        </main>
+        <footer></footer>
+    </div>
+
+<script>
+    function wykonane(ppx){
+        let elemLi = document.getElementById(ppx);
+        elemLi.style.textDecoration = "line-through";
+    }
+
+    let numerOstatniegoId = 6;
+    function dodaj(){
+    // wstęp, pobieranie danych, ustawianie zmiennych
+        numerOstatniegoId++;
+        let id = 'pp' + numerOstatniegoId;
+        let tekst = document.getElementById('tekst').value;
+        let lista = document.getElementById('lista');
+
+    // tworzenie i wstawianie podpunktu
+        let podPunkt = document.createElement('li');
+        lista.appendChild(podPunkt);
+
+    // tworzenie i wstawianie napisu
+        let napis = document.createElement('span');
+        napis.innerHTML = tekst;
+        napis.id = id;
+        podPunkt.appendChild(napis);
+        
+    // tworzenie i wstawianie przycisku
+        let przycisk = document.createElement("input");
+        przycisk.type = "button";
+        przycisk.value = "Wykonane";
+        podPunkt.appendChild(przycisk);
+        przycisk.onclick = () => {wykonane(id); };
+    }
+</script>
+</body>
+</html>
