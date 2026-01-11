@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista wydarzeń</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+
+<header>
+    <h1>Moje wydarzenia</h1>
+</header>
+
+<main>
+    <section id="formularz">
+        <label>Typ wydarzenia</label>
+        <select id="typ">
+            <option value="">-- wybierz --</option>
+            <option value="koncert">Koncert</option>
+            <option value="egzamin">Egzamin</option>
+            <option value="wycieczka">Wycieczka</option>
+            <option value="urodziny">Urodziny</option>
+        </select>
+
+        <label>Data</label>
+        <input type="date" id="data">
+
+        <label>Nazwa wydarzenia</label>
+        <input type="text" id="nazwa">
+
+        <button onclick="dodajWydarzenie()">Dodaj wydarzenie</button>
+    </section>
+
+    <section id="lista"></section>
+</main>
+
+</body>
+</html>

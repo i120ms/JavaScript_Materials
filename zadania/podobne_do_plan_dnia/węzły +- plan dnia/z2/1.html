@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Organizer dnia</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+
+<header>
+    <h1>Organizer aktywności</h1>
+</header>
+
+<main>
+    <section id="panel">
+        <label>Rodzaj aktywności</label>
+        <select id="rodzaj">
+            <option value="">-- wybierz --</option>
+            <option value="nauka">Nauka</option>
+            <option value="praca">Praca</option>
+            <option value="sport">Sport</option>
+            <option value="relaks">Odpoczynek</option>
+        </select>
+
+        <label>Godzina</label>
+        <input type="text" id="godzina">
+
+        <label>Opis</label>
+        <input type="text" id="opis">
+
+        <div class="buttons">
+            <button onclick="dodaj()">Dodaj aktywność</button>
+            <button onclick="wyczysc()">Wyczyść formularz</button>
+        </div>
+    </section>
+
+    <section id="kontener"></section>
+</main>
+
+</body>
+</html>
