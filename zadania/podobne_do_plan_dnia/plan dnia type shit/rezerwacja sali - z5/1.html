@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Rezerwacja zasobów</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+
+<header>
+    <h1>Rezerwacja zasobów</h1>
+</header>
+
+<main>
+    <section id="lewa">
+        <fieldset>
+            <legend>Termin rezerwacji</legend>
+            <input type="date" id="data">
+            <button onclick="ustawDate()">Ustaw termin</button>
+        </fieldset>
+
+        <fieldset>
+            <legend>Dodaj rezerwację</legend>
+
+            <label>Zasób</label>
+            <select id="zasob">
+                <option value="">-- wybierz --</option>
+                <option value="sala">Sala konferencyjna</option>
+                <option value="projektor">Projektor</option>
+                <option value="laptop">Laptop</option>
+                <option value="inne">Inne</option>
+            </select>
+
+            <br><label>Godzina</label>
+            <input type="text" id="godzina">
+
+            <br><label>Nazwa / opis</label>
+            <input type="text" id="opis">
+
+            <br><button onclick="dodajRezerwacje()">Dodaj rezerwację</button>
+        </fieldset>
+
+        <div class="buttons">
+            <button onclick="zapiszRezerwacje()">Zapisz</button>
+            <button onclick="drukujRezerwacje()">Drukuj</button>
+        </div>
+    </section>
+
+    <section id="prawa">
+        <section id="termin"></section>
+        <section id="lista"></section>
+    </section>
+</main>
+
+</body>
+</html>

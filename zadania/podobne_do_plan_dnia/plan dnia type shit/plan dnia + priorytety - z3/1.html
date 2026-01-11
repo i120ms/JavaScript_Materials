@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Plan dnia – priorytety</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+
+<header>
+    <h1>Plan dnia z priorytetami</h1>
+</header>
+
+<main>
+    <section id="lewa">
+        <fieldset>
+            <legend>Wybór dnia</legend>
+            <input type="date" id="data">
+            <button onclick="ustawDzien()">Ustaw dzień</button>
+        </fieldset>
+
+        <fieldset>
+            <legend>Dodaj zadanie</legend>
+
+            <label>Rodzaj</label>
+            <select id="rodzaj">
+                <option value="">-- wybierz --</option>
+                <option value="praca">Praca</option>
+                <option value="nauka">Nauka</option>
+                <option value="dom">Dom</option>
+                <option value="inne">Inne</option>
+            </select>
+
+            <br><label>Priorytet</label>
+            <select id="priorytet">
+                <option value="">-- wybierz --</option>
+                <option value="high">Wysoki</option>
+                <option value="medium">Średni</option>
+                <option value="low">Niski</option>
+            </select>
+
+            <br><label>Godzina</label>
+            <input type="text" id="godzina">
+
+            <label>Opis</label>
+            <input type="text" id="opis">
+
+            <button onclick="dodajZadanie()">Dodaj zadanie</button>
+        </fieldset>
+
+        <div class="buttons">
+            <button onclick="zapiszPlan()">Zapisz plan</button>
+            <button onclick="drukujPlan()">Drukuj plan</button>
+        </div>
+    </section>
+
+    <section id="prawa">
+        <section id="kiedy"></section>
+        <p id="licznik">Liczba zadań: 0</p>
+        <section id="lista"></section>
+    </section>
+</main>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Panel zgłoszeń</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+
+<header>
+    <h1>Panel zgłoszeń serwisowych</h1>
+</header>
+
+<main>
+    <section id="lewa">
+        <fieldset>
+            <legend>Data zgłoszeń</legend>
+            <input type="date" id="data">
+            <button onclick="ustawDate()">Ustaw datę</button>
+        </fieldset>
+
+        <fieldset>
+            <legend>Nowe zgłoszenie</legend>
+
+            <label>Typ problemu</label>
+            <select id="typ">
+                <option value="">-- wybierz --</option>
+                <option value="sprzet">Sprzęt</option>
+                <option value="software">Oprogramowanie</option>
+                <option value="siec">Sieć</option>
+                <option value="inne">Inne</option>
+            </select>
+
+            <label>Godzina</label>
+            <input type="text" id="godzina">
+
+            <label>Opis problemu</label>
+            <input type="text" id="opis">
+
+            <button onclick="dodajZgloszenie()">Dodaj zgłoszenie</button>
+        </fieldset>
+
+        <div class="buttons">
+            <button onclick="zapiszZgloszenia()">Zapisz</button>
+            <button onclick="drukujZgloszenia()">Drukuj</button>
+        </div>
+    </section>
+
+    <section id="prawa">
+        <section id="dataZgloszen"></section>
+        <section id="lista"></section>
+    </section>
+</main>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #eef2f3;
+}
+
+header {
+    background: #34495e;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+main {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+#lewa {
+    width: 300px;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+#prawa {
+    flex: 1;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.punkt {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #ecf0f1;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+.punkt img {
+    width: 40px;
+    height: 40px;
+}
