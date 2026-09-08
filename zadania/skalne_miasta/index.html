@@ -27,18 +27,6 @@
              <h4>Aktualny wybór:</h4>
              <!-- Miejsce na powiększone zdjęcie -->
             <script>
-                // function pokaz(numer){
-                    
-                //     //"❤️ Dodaj do ulubionych"
-                //     //"⬇️ Pobierz zdjęcie"
-                    
-                // } 
-                
-                
-                // function pobierz(sciezka) {
-                //   //tej funkcji nie piszemy
-                // }
-
                 function pokaz1(){
                     pokaz(1);
                 }
@@ -70,97 +58,89 @@
                 function pokaz8(){
                     pokaz(8);
                 }
+                    
+                    //"❤️ Dodaj do ulubionych"
+                    //"⬇️ Pobierz zdjęcie" 
+                
+                function pokaz(numer){
+                    let lewy = document.getElementById("lewy");
+                    let stareZdjecie = document.getElementById("duzoZdjecie");
+                    let starePrzyciski = document.getElementById("przyciski");
 
-    function pokaz(numer) {
-        let lewy = document.getElementById("lewy");
-        let stareZdjecie = document.getElementById("duzeZdjecie");
-        let starePrzyciski = document.getElementById("przyciski");
+                    if(stareZdjecie){
+                        stareZdjecie.remove();
+                    }
+                    if(starePrzyciski){
+                        starePrzyciski.remove();
+                    }
 
-    if (stareZdjecie) {
-        stareZdjecie.remove();
-    }
-    if (starePrzyciski) {
-        starePrzyciski.remove();
-    }
+                    let zdjecie = document.createElement("img");
+                    zdjecie.src = "z" + numer + ".jpg";
+                    zdjecie.id = "duzeZdjecie";
+                    zdjecie.alt = "Trasa" + numer;
 
-        let zdjecie = document.createElement("img");
-    zdjecie.src = "z" + numer + ".jpg";
-    zdjecie.id = "duzeZdjecie";
-    zdjecie.alt = "Trasa " + numer;
+                    lewy.appendChild(zdjecie);
 
-    lewy.appendChild(zdjecie);
+                    let przyciski = document.createElement("div");
+                    przyciski.id = "przyciski";
+                    przyciski.className = "przyciski-akcji";
+                    
+                    let like = document.createElement("button");
+                    like.className = "btn btn-like";
+                    like.innerHTML = "❤️ Dodaj do ulubionych";
+                    like.onclick = function(){
+                        lubie(numer);
+                    };
 
-        let przyciski = document.createElement("div");
-    przyciski.id = "przyciski";
-    przyciski.className = "przyciski-akcji";
+                    let download = document.createElement("button");
+                    download.className = "btn btn-download";
+                    download.innerHTML = "⬇️ Pobierz zdjęcie";
+                    download.onclick = function(){
+                        pobierz("z" + numer + ".jpg");
+                    };
 
-        let like = document.createElement("button");
-    like.className = "btn btn-like";
-    like.innerHTML = "❤️ Dodaj do ulubionych";
-    like.onclick = function() {
-        lubie(numer);
-    };
+                    przyciski.appendChild(like);
+                    przyciski.appendChild(download);
 
-        let download = document.createElement("button");
-    download.className = "btn btn-download";
-    download.innerHTML = "⬇️ Pobierz zdjęcie";
-    download.onclick = function() {
-        pobierz("z" + numer + ".jpg");
-    };
+                    lewy.appendChild(przyciski);
+                    let footer = document.querySelector("footer");
+                    let historia = document.createElement("img");
 
-    przyciski.appendChild(like);
-    przyciski.appendChild(download);
+                    historia.src = "z" + numer + ".jpg";
+                    historia.alt = "Trasa " + numer;
 
-    lewy.appendChild(przyciski);
+                    footer.appendChild(historia);
+                }
 
+                function lubie(id){
+                    let prawy = document.getElementById("prawy");
+                    let zdjecie = document.createElement("img");
 
-                let footer = document.querySelector("footer");
-                let historia = document.createElement("img");
-    historia.src = "z" + numer + ".jpg";
-    historia.alt = "Trasa " + numer;
+                    zdjecie.src = "z" + id + ".jpg";
+                    zdjecie.alt = "Trasa " + id;
 
-    footer.appendChild(historia);
-}
-
-
-function lubie(id){
-    let prawy = document.getElementById("prawy");
-
-    let zdjecie = document.createElement("img");
-    zdjecie.src = "z" + id + ".jpg";
-    zdjecie.alt = "Trasa " + id;
-
-    prawy.appendChild(zdjecie);
-}
-
-
-function pobierz(sciezka){
-    let link = document.createElement('a');
-            link.href = sciezka;
-            link.download = sciezka;
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-}
-
+                    prawy.appendChild(zdjecie);
+                }
+                
+                function pobierz(sciezka) {
+                  //tej funkcji nie piszemy
+                }
             </script>
         </section>
         <section id="prawy">
              <h4>Ulubione trasy:</h4>
             <script>
                 function lubie(id){
-                let prawy = document.getElementById("prawy");
+                    let prawy = document.getElementById("prawy");
+                    let istniejace = prawy.querySelector("img[data-id='" + id +"']");
+                    if(istniejace) return;
 
-            // Opcjonalnie: zabezpieczenie przed duplikatem w ulubionych
-            let istniejace = prawy.querySelector("img[data-id='" + id + "']");
-            if (istniejace) return;
+                    let zdjecie = document.createElement("img");
+                    zdjecie.src = "z" + id + ".jpg";
+                    zdjecie.alt = "Trasa" + id;
+                    zdjecie.setAttribute("data-id", id);
 
-            let zdjecie = document.createElement("img");
-            zdjecie.src = "z" + id + ".jpg";
-            zdjecie.alt = "Trasa " + id;
-            zdjecie.setAttribute("data-id", id);
-            
-            prawy.appendChild(zdjecie);
+                    prawy.appendChild(zdjecie);
                 }
             </script>
         </section>
