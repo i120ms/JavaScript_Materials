@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Szlaki Turystyczne - Skalne Miasta</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Wędrówki po Skalnych Miastach</h1>
+        <h3>Najpiękniejsze trasy i formacje skalne Czeskiego Raju</h3>
+    </header>
+    <main>
+        <aside>
+            <h4>Wybierz trasę:</h4>
+            <img src="z1.jpg" id="z1" onclick="pokaz1()" class="zAside" alt="Trasa 1">
+            <img src="z2.jpg" id="z2" onclick="pokaz2()" class="zAside" alt="Trasa 2">
+            <img src="z3.jpg" id="z3" onclick="pokaz3()" class="zAside" alt="Trasa 3">
+            <img src="z4.jpg" id="z4" onclick="pokaz4()" class="zAside" alt="Trasa 4">
+            <img src="z5.jpg" id="z5" onclick="pokaz5()" class="zAside" alt="Trasa 5">
+            <img src="z6.jpg" id="z6" onclick="pokaz6()" class="zAside" alt="Trasa 6">
+            <img src="z7.jpg" id="z7" onclick="pokaz7()" class="zAside" alt="Trasa 7">
+            <img src="z8.jpg" id="z8" onclick="pokaz8()" class="zAside" alt="Trasa 8">
+        </aside>
+        <section id="lewy">
+             <h4>Aktualny wybór:</h4>
+             <!-- Miejsce na powiększone zdjęcie -->
+            <script>
+                function pokaz1(){
+                    pokaz(1);
+                }
+
+                function pokaz2(){
+                    pokaz(2);
+                }
+
+                function pokaz3(){
+                    pokaz(3);
+                }
+
+                function pokaz4(){
+                    pokaz(4);
+                }
+
+                function pokaz5(){
+                    pokaz(5);
+                }
+
+                function pokaz6(){
+                    pokaz(6);
+                }
+
+                function pokaz7(){
+                    pokaz(7);
+                }
+
+                function pokaz8(){
+                    pokaz(8);
+                }
+                    
+                    //"❤️ Dodaj do ulubionych"
+                    //"⬇️ Pobierz zdjęcie" 
+                
+                function pokaz(numer){
+                    let lewy = document.getElementById("lewy");
+                    let stareZdjecie = document.getElementById("duzeZdjecie");
+                    let starePrzyciski = document.getElementById("przyciski");
+
+                    if(stareZdjecie){
+                        stareZdjecie.remove();
+                    }
+                    if(starePrzyciski){
+                        starePrzyciski.remove();
+                    }
+
+                    let zdjecie = document.createElement("img");
+                    zdjecie.src = "z" + numer + ".jpg";
+                    zdjecie.id = "duzeZdjecie";
+                    zdjecie.alt = "Trasa" + numer;
+
+                    lewy.appendChild(zdjecie);
+
+                    let przyciski = document.createElement("div");
+                    przyciski.id = "przyciski";
+                    przyciski.className = "przyciski-akcji";
+                    
+                    let like = document.createElement("button");
+                    like.innerHTML = "❤️ Dodaj do ulubionych";
+                    like.onclick = function(){
+                        lubie(numer);
+                    };
+
+                    let download = document.createElement("button");
+                    download.innerHTML = "⬇️ Pobierz zdjęcie";
+                    download.onclick = function(){
+                        pobierz("z" + numer + ".jpg");
+                    };
+
+                    przyciski.appendChild(like);
+                    przyciski.appendChild(download);
+
+                    lewy.appendChild(przyciski);
+                    let footer = document.querySelector("footer");
+                    let historia = document.createElement("img");
+
+                    historia.src = "z" + numer + ".jpg";
+                    historia.alt = "Trasa " + numer;
+
+                    footer.appendChild(historia);
+                }
+
+                function lubie(id){
+                    let prawy = document.getElementById("prawy");
+                    let zdjecie = document.createElement("img");
+
+                    zdjecie.src = "z" + id + ".jpg";
+                    zdjecie.alt = "Trasa " + id;
+
+                    prawy.appendChild(zdjecie);
+                }
+                
+                function pobierz(sciezka) {
+                  //tej funkcji nie piszemy
+                }
+            </script>
+        </section>
+        <section id="prawy">
+             <h4>Ulubione trasy:</h4>
+            <script>
+                function lubie(id){
+                    let prawy = document.getElementById("prawy");
+                    let istniejace = prawy.querySelector("img[data-id='" + id +"']");
+                    if(istniejace) return;
+
+                    let zdjecie = document.createElement("img");
+                    zdjecie.src = "z" + id + ".jpg";
+                    zdjecie.alt = "Trasa" + id;
+                    zdjecie.setAttribute("data-id", id);
+
+                    prawy.appendChild(zdjecie);
+                }
+            </script>
+        </section>
+    </main>
+    <footer>
+        <h4>Ostatnio oglądane:</h4>
+    </footer>
+</body>
+</html>
